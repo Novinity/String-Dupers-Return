@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "String Dupers Return",
   "description": "Reimplements string dupers into 1.21.2+",
-  "authors": [],
+  "authors": ["Novinity"],
   "contact": {},
   "license": "All-Rights-Reserved",
   "icon": "assets/stringdupersreturn/icon.png",
