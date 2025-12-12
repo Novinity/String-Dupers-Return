@@ -1,0 +1,6 @@
+name: StringDupersReturn
+version: '1.0.11'
+main: com.novinitymc.stringDupersReturn.StringDupersReturn
+api-version: '1.21'
+authors: [ Novinity ]
+folia-supported: true
