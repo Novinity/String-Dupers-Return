@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "stringdupersreturn",
+  "version": "${version}",
+  "name": "String Dupers Return",
+  "description": "Reimplements string dupers into 1.21.2+",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/stringdupersreturn/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.novinitygames.stringdupersreturn.StringDupersReturn"
+    ]
+  },
+  "mixins": [
+    "stringdupersreturn.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

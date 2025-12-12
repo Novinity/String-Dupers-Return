@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.novinitygames.stringdupersreturn.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TripwireHookBlockMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
