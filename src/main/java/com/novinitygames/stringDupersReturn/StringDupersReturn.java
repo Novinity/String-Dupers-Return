@@ -1,6 +1,7 @@
-package com.novinitymc.stringDupersReturn;
+package com.novinitygames.stringDupersReturn;
 
-import com.novinitymc.stringDupersReturn.listener.BlockListeners;
+import com.novinitygames.stringDupersReturn.listener.BlockListeners;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class StringDupersReturn extends JavaPlugin {
@@ -15,6 +16,9 @@ public final class StringDupersReturn extends JavaPlugin {
         saveDefaultConfig();
 
         getServer().getPluginManager().registerEvents(new BlockListeners(), this);
+
+        int pluginId = 29724;
+        Metrics metrics = new Metrics(this, pluginId);
     }
 
     public static StringDupersReturn getInstance() {return instance;}

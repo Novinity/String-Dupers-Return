@@ -1,6 +1,6 @@
-package com.novinitymc.stringDupersReturn.listener;
+package com.novinitygames.stringDupersReturn.listener;
 
-import com.novinitymc.stringDupersReturn.StringDupersReturn;
+import com.novinitygames.stringDupersReturn.StringDupersReturn;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Waterlogged;
