@@ -13,19 +13,25 @@ import org.bukkit.inventory.ItemStack;
 import java.util.Random;
 
 public class BlockListeners implements Listener {
+    // Called when water flows
     @EventHandler
-    public void onBlockBreak(BlockFromToEvent event) {
+    public void onBlockFromTo(BlockFromToEvent event) {
+        // Make sure the block it's heading to that was broken is an attached tripwire
         if (event.getToBlock().getType() == Material.TRIPWIRE) {
             if (event.getToBlock().getBlockData() instanceof Tripwire tripwire) {
                 if (tripwire.isAttached()) {
+                    // Check if the block that it's coming from is a waterlogged trapdoor
                     Block trapdoor = event.getBlock();
                     if (trapdoor.getType().toString().toUpperCase().contains("TRAPDOOR") && trapdoor.getBlockData() instanceof Waterlogged wl) {
                         if (wl.isWaterlogged()) {
+                            // Cancel the breaking
                             event.setCancelled(true);
+                            // Get the minimum and maximum string drops
                             int min = StringDupersReturn.getInstance().getConfig().getInt("minStringDrop");
                             int max = StringDupersReturn.getInstance().getConfig().getInt("maxStringDrop");
                             if (min == 0 && max == 0) return;
                             try {
+                                // Spawn string at the location
                                 event.getToBlock().getWorld().dropItem(event.getToBlock().getLocation(), new ItemStack(Material.STRING, new Random().nextInt(min, max + 1)));
                                 tripwire.setPowered(true);
                             } catch (Exception e) {

@@ -17,6 +17,7 @@ public final class StringDupersReturn extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new BlockListeners(), this);
 
+        // bStats
         int pluginId = 29724;
         Metrics metrics = new Metrics(this, pluginId);
     }
