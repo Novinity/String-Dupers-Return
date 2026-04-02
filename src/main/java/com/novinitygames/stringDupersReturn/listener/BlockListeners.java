@@ -24,15 +24,16 @@ public class BlockListeners implements Listener {
                     Block trapdoor = event.getBlock();
                     if (trapdoor.getType().toString().toUpperCase().contains("TRAPDOOR") && trapdoor.getBlockData() instanceof Waterlogged wl) {
                         if (wl.isWaterlogged()) {
-                            // Cancel the breaking
+                            // Stop the tripwire from being broken
                             event.setCancelled(true);
                             // Get the minimum and maximum string drops
                             int min = StringDupersReturn.getInstance().getConfig().getInt("minStringDrop");
                             int max = StringDupersReturn.getInstance().getConfig().getInt("maxStringDrop");
                             if (min == 0 && max == 0) return;
                             try {
-                                // Spawn string at the location
+                                // Spawn a random amount of string within the bounds at the tripwire location
                                 event.getToBlock().getWorld().dropItem(event.getToBlock().getLocation(), new ItemStack(Material.STRING, new Random().nextInt(min, max + 1)));
+                                // Power it to emulate og string dupers a bit more
                                 tripwire.setPowered(true);
                             } catch (Exception e) {
                             }
